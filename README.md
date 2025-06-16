@@ -1,78 +1,109 @@
-# Customer-Segmentation-for-SBI-Life-Insurance
+# 🧠 Customer Segmentation for SBI Life Insurance
 
-Google Colab Link : https://colab.research.google.com/drive/1leq8wT4kIlASNu2mo9UBVE0OsnDV-6k3?usp=sharing
+🔗 **Google Colab Notebook:** [Open in Colab](https://colab.research.google.com/drive/1leq8wT4kIlASNu2mo9UBVE0OsnDV-6k3?usp=sharing)  
+📂 **Dataset:** [Kaggle - Credit Card Data](https://www.kaggle.com/datasets/arjunbhasin2013/ccdata)
 
-## Overview
-This project aims to develop a customer segmentation model for SBI Life Insurance using behavioral data from credit card holders. By identifying distinct customer groups, SBI Life Insurance can better target products such as savings plans, loans, and wealth management services.
+---
 
-## Dataset
-- Source: Kaggle
-- Dataset Link : https://www.kaggle.com/datasets/arjunbhasin2013/ccdata
-- Description: Behavioral data of ~9,000 active credit card holders over six months.
-- Features: 18 behavioral variables (e.g., balance, purchases, cash advances, credit limits).
+## 📌 Overview
 
+This project focuses on building a **customer segmentation model** for **SBI Life Insurance** using behavioral data of credit card holders. By identifying unique customer clusters, SBI Life can:
 
-## Problem Statement
-Accurate segmentation allows SBI Life Insurance to tailor marketing strategies, improve customer engagement, and optimize financial product recommendations.
+- Tailor financial products (savings, loans, wealth management)
+- Boost customer engagement
+- Enhance targeted marketing strategies
 
-## Steps and Methodology
+---
 
+## 📊 Dataset Details
 
-## Data Preprocessing:
+- **Source**: Kaggle  
+- **Records**: ~9,000 active credit card holders  
+- **Duration**: 6 months of transactional behavior  
+- **Features**: 18 behavioral metrics including:
+  - Balance
+  - Purchases
+  - Cash Advances
+  - Credit Limits
+  - Payments, etc.
 
-- Skewed data normalized using Log Scaling.
-- Features scaled using MinMaxScaler.
-- Dimensionality reduced using Principal Component Analysis (PCA) for visualization and performance improvement.
+---
 
+## 🧩 Problem Statement
 
-## Clustering Algorithms Applied:
+> How can we segment customers based on behavior to help SBI Life Insurance offer **customized financial products**?
 
-- K-Means Clustering: Tested with different values of k
-- Agglomerative Clustering: Used hierarchical techniques with dendrograms.
-- DBSCAN: Density-based clustering to identify arbitrary-shaped clusters and noise.
+---
 
+## 🔧 Methodology
 
-## Evaluation Metrics:
+### 🔹 Data Preprocessing
 
-- Silhouette Score calculated for each algorithm to determine clustering performance.
+- Applied **Log Transformation** to handle skewness.
+- Used **MinMaxScaler** to normalize feature values.
+- Reduced dimensionality using **Principal Component Analysis (PCA)** for visualization and improved model performance.
 
-| Clustering Algorithm | Silhouette Score         |
-|-----------------------|--------------------------|
-| K-Means              | 0.6865277503916535       |
-| Hierarchical         | 0.6862802533330135       |
-| DBSCAN               | 0.6429220048286987       |
+### 🔹 Clustering Algorithms
 
-We have chosen DBSCAN as the best model.
+| Algorithm              | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| **K-Means**            | Evaluated multiple k values to find optimal clusters                        |
+| **Agglomerative**      | Used dendrograms and hierarchical strategies for grouping                   |
+| **DBSCAN**             | Density-based approach to identify clusters of arbitrary shape and noise    |
 
-### DBSCAN outperformed K-Means and Agglomerative Clustering due to its ability to:
-- Handle noise and outliers effectively.
-- Identify arbitrarily shaped clusters.
-- Avoid reliance on a predefined number of clusters.
+---
 
+## 📈 Evaluation
 
-## Visualization:
+**Metric**: *Silhouette Score*
 
-- Clusters visualized in 3D scatter plots using PCA-reduced data.
+| Clustering Algorithm   | Silhouette Score        |
+|------------------------|-------------------------|
+| **K-Means**            | 0.6865                  |
+| **Agglomerative**      | 0.6862                  |
+| **DBSCAN**             | **0.6429**              |
 
+> ✅ **DBSCAN** was chosen for its ability to:
+- Handle **noise** and **outliers**
+- Identify **non-spherical** clusters
+- Avoid requiring a predefined number of clusters
 
-## Cluster Insights and Recommendations
+---
 
+## 🧠 Cluster Insights & Business Recommendations
 
-| Cluster | Behavior                                | Recommendation                                           |
-|---------|-----------------------------------------|---------------------------------------------------------|
-| Cluster 0 | Installment Purchasers                 | Promote installment plans and reward timely payments.   |
-| Cluster 1 | Cash Advance Users                     | Offer better cash advance terms and promote card usage. |
-| Cluster 2 | One-Off Purchasers                     | Provide cashback/rewards and increase credit limits.    |
-| Cluster 3 | Low Spenders (No Installments)         | Incentivize spending with installment benefits.         |
-| Cluster 4 | Big Spenders (No Cash Advances)        | Retain high-value customers with loyalty programs.      |
-| Cluster 5 | Low Financial Usage                    | Target with promotional offers for trial usage.        |
-| Cluster 6 | High Credit Limit, Diverse Usage       | Reward with points, perks, and personalized benefits.   |
-| Cluster 7 | Niche Segment                          | Tailor offers to specific preferences.                  |
+| Cluster | Behavior                          | Recommendation                                              |
+|--------:|-----------------------------------|-------------------------------------------------------------|
+| 0       | Installment Purchasers            | Promote installment plans & reward timely payments          |
+| 1       | Cash Advance Users                | Offer better terms and encourage responsible usage          |
+| 2       | One-Off Purchasers                | Provide cashback/rewards & increase credit limits           |
+| 3       | Low Spenders (No Installments)    | Incentivize with installment-based benefits                 |
+| 4       | Big Spenders (No Cash Advances)   | Retain using loyalty programs and premium services          |
+| 5       | Low Financial Usage               | Target with promotional offers to increase usage            |
+| 6       | High Credit, Diverse Usage        | Reward with perks, points & personalized experiences        |
+| 7       | Niche Segment                     | Tailor offers to unique needs and behavioral patterns       |
 
+---
 
+## 📊 Visualizations
 
+- Used **PCA** for 3D projection of clusters  
+- Enabled **visual differentiation** and pattern recognition between segments
 
-### Future Scope
-- Enhanced Models: Explore advanced clustering methods like deep learning.
-- Customer Insights: Include richer datasets, such as transaction history.
-- Business Applications: Develop personalized marketing campaigns and product recommendations.
+---
+
+## 🔭 Future Scope
+
+- ✅ Explore **advanced clustering techniques** (e.g., Autoencoders, GMMs)
+- ✅ Integrate **richer datasets** (e.g., transaction logs, demographics)
+- ✅ Implement **real-time segmentation pipelines**
+- ✅ Launch **personalized campaign engines** for each segment
+
+---
+
+## 🧑‍💼 Impact
+
+A well-structured segmentation strategy allows **SBI Life Insurance** to deliver:
+- Higher customer satisfaction
+- Increased ROI on marketing
+- Better product-market fit
